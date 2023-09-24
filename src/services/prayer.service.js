@@ -19,10 +19,12 @@ async function fetchPrayerTimes() {
   const month = new Date().getMonth() + 1;
   const year = new Date().getFullYear();
   const params = new URLSearchParams({ latitude, longitude, month, year });
+  console.log('[fetchPrayerTimes]', { latitude, longitude, month, year });
   const res = await fetch(
     `http://api.aladhan.com/v1/calendar?${params.toString()}`
   );
   const { data } = await res.json();
+  console.log('[fetchPrayerTimes]', data);
   const monthPrayerTimes = data.reduce((acc, { date, timings }) => {
     const { gregorian } = date;
     const { Fajr, Sunrise, Dhuhr, Asr, Maghrib, Isha, Sunset } = timings;

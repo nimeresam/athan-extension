@@ -8,7 +8,8 @@ const { STORAGE } = require('../constants');
  * @returns {Promise<{lat: number, long: number}>}
  */
 async function getCurrentPosition() {
-  return storage.get(STORAGE.Position);
+  const position = await storage.get(STORAGE.Position);
+  return position || {};
 }
 
 /**

@@ -1,0 +1,56 @@
+/* normalize css starts here */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* normalize css ends here */
+
+body {
+  width: 200px;
+  height: 250px;
+  padding: 1.5rem 2rem;
+}
+
+html[lang=ar] .label {
+  font-family: 'Cairo' !important;
+}
+
+.col.label {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.col.time {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#spinner-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#spinner-container.hidden {
+  display: none;
+}
+
+#prayer-times .row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+#prayer-times .col {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

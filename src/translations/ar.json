@@ -1,0 +1,10 @@
+{
+  "Fajr": "الفجر",
+  "Sunrise": "الشروق",
+  "Dhuhr": "الظهر",
+  "Asr": "العصر",
+  "Maghrib": "المغرب",
+  "Isha": "العشاء",
+  "NOTIFICATION_TITLE": "حان وقت صلاة %s",
+  "NOTIFICATION_DESCRIPTION": "دخل وقت صلاة %s في منطقتك"
+}

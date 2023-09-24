@@ -1,0 +1,10 @@
+{
+  "Fajr": "Fajr",
+  "Sunrise": "Sunrise",
+  "Dhuhr": "Dhuhr",
+  "Asr": "Asr",
+  "Maghrib": "Maghrib",
+  "Isha": "Isha",
+  "NOTIFICATION_TITLE": "It's time for %s",
+  "NOTIFICATION_DESCRIPTION": "It's time for %s prayer in your area"
+}

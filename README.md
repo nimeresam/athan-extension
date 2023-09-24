@@ -1,11 +1,11 @@
 # <img src="public/icons/icon_48.png" width="45" align="left"> Athan Extension
 
-My Chrome Extension
+Athan - Chrome Extension
 
 ## Features
 
-- Feature 1
-- Feature 2
+- Desktop notifications.
+- Icon badge with in 15 minutes before prayer time.
 
 ## Install
 
@@ -14,8 +14,3 @@ My Chrome Extension
 ## Contribution
 
 Suggestions and pull requests are welcomed!.
-
----
-
-This project was bootstrapped with [Chrome Extension CLI](https://github.com/dutiyesh/chrome-extension-cli)
-

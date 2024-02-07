@@ -52,7 +52,9 @@ async function fetchPrayerTimes() {
  */
 async function getMonthPrayers() {
   let monthPrayerTimes = await storage.get(STORAGE.MonthPrayerTimes);
-  if (monthPrayerTimes) return monthPrayerTimes;
+  const today = getTodayDate();
+  // make sure today prayers are exist
+  if (monthPrayerTimes && monthPrayerTimes[today]) return monthPrayerTimes;
   monthPrayerTimes = await fetchPrayerTimes();
   await storage.set(STORAGE.MonthPrayerTimes, monthPrayerTimes);
   return monthPrayerTimes;
@@ -68,9 +70,7 @@ async function getMonthPrayers() {
 async function getTodayPrayers() {
   const monthPrayerTimes = await getMonthPrayers();
   const today = getTodayDate();
-  const todayPrayers = monthPrayerTimes[today];
-  if (!todayPrayers) throw 'No prayer times found';
-  return todayPrayers;
+  return monthPrayerTimes[today];
 }
 
 /**

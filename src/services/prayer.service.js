@@ -69,7 +69,7 @@ async function getTodayPrayers() {
   const monthPrayerTimes = await getMonthPrayers();
   const today = getTodayDate();
   const todayPrayers = monthPrayerTimes[today];
-  if (!todayPrayers) return reject('No prayer times found');
+  if (!todayPrayers) throw 'No prayer times found';
   return todayPrayers;
 }
 

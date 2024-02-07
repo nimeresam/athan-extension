@@ -29,6 +29,10 @@ function hideSpinner() {
   document.getElementById('spinner-container').classList.add('hidden');
 }
 
+function showError() {
+  document.getElementById('error').classList.remove('hidden');
+}
+
 /**
  * @private
  * @async
@@ -81,13 +85,18 @@ function updatePrayerTimes(prayerTimes) {
 document.addEventListener('DOMContentLoaded', async () => {
   // TODO: check geolocation permission with HTML handler
   // TODO: check internet connection with HTML handler
-  await loadOptions();
-  await setCurrentPosition();
-  const prayerTimes = await getTodayPrayers();
+  try {
+    await loadOptions();
+    await setCurrentPosition();
+    const prayerTimes = await getTodayPrayers();
+    updatePrayerTimes(prayerTimes);
+    updateNextPrayer();
+    chrome.runtime.sendMessage({
+      type: 'CREATE_ALARM'
+    });
+  } catch (err) {
+    showError();
+    document.getElementById('error').innerText = `${err}`;
+  }
   hideSpinner();
-  updatePrayerTimes(prayerTimes);
-  updateNextPrayer();
-  chrome.runtime.sendMessage({
-    type: 'CREATE_ALARM'
-  });
 });

@@ -41,7 +41,8 @@ html[lang=ar] .label {
   right: 0;
 }
 
-#spinner-container.hidden {
+#spinner-container.hidden,
+#error.hidden {
   display: none;
 }
 

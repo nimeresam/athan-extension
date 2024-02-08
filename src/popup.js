@@ -30,8 +30,8 @@ function hideSpinner() {
 }
 
 function showError(message) {
-  document.getElementById('error').classList.remove('hidden');
-  document.getElementById('error').innerText = `${message}`;
+  document.getElementById('error-container').classList.remove('hidden');
+  document.getElementById('error-message').innerText = `${message}`;
 }
 
 /**

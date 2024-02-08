@@ -41,8 +41,23 @@ html[lang=ar] .label {
   right: 0;
 }
 
+#error-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#error-container > img {
+  margin: auto;
+}
+
+#error-container #error-message {
+  color: #e04f5f;
+  text-align: center;
+  margin-top: 6px;
+}
+
 #spinner-container.hidden,
-#error.hidden {
+#error-container.hidden {
   display: none;
 }
 

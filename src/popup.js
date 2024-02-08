@@ -29,8 +29,9 @@ function hideSpinner() {
   document.getElementById('spinner-container').classList.add('hidden');
 }
 
-function showError() {
+function showError(message) {
   document.getElementById('error').classList.remove('hidden');
+  document.getElementById('error').innerText = `${message}`;
 }
 
 /**
@@ -95,8 +96,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       type: 'CREATE_ALARM'
     });
   } catch (err) {
-    showError();
-    document.getElementById('error').innerText = `${err}`;
+    showError(err);
   }
   hideSpinner();
 });
